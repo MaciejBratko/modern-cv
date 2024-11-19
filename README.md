@@ -1,4 +1,4 @@
 <h1>
-  goit-react-hw-02</br>
+  Personal CV</br>
   
 </h1>
