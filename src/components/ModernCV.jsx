@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, Github, Code } from 'lucide-react';
-import profilePic from '../../profile_pic.JPG';
+import profilePic from '../profile_pic.JPG';
 
 const ModernCV = () => {
   return (

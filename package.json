@@ -1,5 +1,5 @@
 {
-  "name": "goit-react-hw-01",
+  "name": "modern-cv",
   "version": "1.4.0",
   "type": "module",
   "scripts": {
@@ -10,37 +10,32 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "goit-react-hw-01": "file:",
     "lucide-react": "^0.460.0",
-    "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "vite-template-react": "file:"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.1.6",
-    "@testing-library/react": "^14.1.2",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.20",
-    "jsdom": "^23.0.1",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
-    "vite": "^5.0.8",
-    "vitest": "^1.1.1"
+    "vite": "^5.0.8"
   },
-  "description": "<h1 align=\"center\">\r   Vite Template React\r </h1>",
+  "description": "Modern CV created with React and Tailwind CSS",
   "main": "vite.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MaciejBratko/goit-react-hw-01.git"
+    "url": "git+https://github.com/MaciejBratko/modern-cv.git"
   },
   "keywords": [
-    "react"
+    "react",
+    "cv",
+    "tailwindcss"
   ],
   "author": "Maciej Bratko",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MaciejBratko/goit-react-hw-01/issues"
+    "url": "https://github.com/MaciejBratko/modern-cv/issues"
   },
-  "homepage": "https://github.com/MaciejBratko/goit-react-hw-01#readme"
+  "homepage": "https://github.com/MaciejBratko/modern-cv#readme"
 }
