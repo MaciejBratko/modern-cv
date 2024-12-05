@@ -30,6 +30,11 @@ const cvSlice = createSlice({
   name: 'cv',
   initialState: loadState(),
   reducers: {
+    updateSectionTitle: (state, action) => {
+      const { section, value } = action.payload;
+      state.sectionTitles[section] = value;
+      saveState(state);
+    },
     updatePersonalInfo: (state, action) => {
       const { field, value, subfield } = action.payload;
       if (subfield) {
@@ -66,6 +71,7 @@ const cvSlice = createSlice({
 });
 
 export const { 
+  updateSectionTitle,
   updatePersonalInfo, 
   updateWorkExperience, 
   updateSkill, 

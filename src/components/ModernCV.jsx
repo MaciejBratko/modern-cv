@@ -8,10 +8,12 @@ import {
   updateWorkExperience, 
   updateSkill, 
   updateEducation,
-  updateProfilePicture
+  updateProfilePicture,
+  updateSectionTitle
 } from "../redux/cvSlice";
 
 const ModernCV = () => {
+  // Keep the .cv since it's configured in the store
   const cvData = useSelector((state) => state.cv);
   const dispatch = useDispatch();
   const fileInputRef = useRef(null);
@@ -114,7 +116,10 @@ const ModernCV = () => {
             <div className="space-y-6">
               <section>
                 <h3 className="text-xl font-semibold mb-4 border-b border-gray-600 pb-2">
-                  PROFILE
+                  <EditableField
+                    value={cvData.sectionTitles.profile}
+                    onSave={(value) => dispatch(updateSectionTitle({ section: 'profile', value }))}
+                  />
                 </h3>
                 <p className="text-gray-300">
                   <EditableField
@@ -127,7 +132,10 @@ const ModernCV = () => {
 
               <section>
                 <h3 className="text-xl font-semibold mb-4 border-b border-gray-600 pb-2">
-                  CONTACT
+                  <EditableField
+                    value={cvData.sectionTitles.contact}
+                    onSave={(value) => dispatch(updateSectionTitle({ section: 'contact', value }))}
+                  />
                 </h3>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
@@ -156,7 +164,10 @@ const ModernCV = () => {
 
               <section>
                 <h3 className="text-xl font-semibold mb-4 border-b border-gray-600 pb-2">
-                  INTERESTS
+                  <EditableField
+                    value={cvData.sectionTitles.interests}
+                    onSave={(value) => dispatch(updateSectionTitle({ section: 'interests', value }))}
+                  />
                 </h3>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
                   {cvData.personalInfo.interests.map((interest, index) => (
@@ -188,7 +199,10 @@ const ModernCV = () => {
             {/* Work Experience */}
             <section className="mb-8">
               <h3 className="text-2xl font-bold mb-6 text-gray-800 border-b-2 border-gray-800 pb-2">
-                WORK EXPERIENCE
+                <EditableField
+                  value={cvData.sectionTitles.workExperience}
+                  onSave={(value) => dispatch(updateSectionTitle({ section: 'workExperience', value }))}
+                />
               </h3>
               {cvData.workExperience.map((work, index) => (
                 <div key={index} className="mb-6">
@@ -235,7 +249,10 @@ const ModernCV = () => {
             {/* Skills */}
             <section className="mb-8">
               <h3 className="text-2xl font-bold mb-6 text-gray-800 border-b-2 border-gray-800 pb-2">
-                SKILLS
+                <EditableField
+                  value={cvData.sectionTitles.skills}
+                  onSave={(value) => dispatch(updateSectionTitle({ section: 'skills', value }))}
+                />
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {Object.entries(cvData.skills).map(([category, skills]) => (
@@ -261,7 +278,10 @@ const ModernCV = () => {
             {/* Education */}
             <section>
               <h3 className="text-2xl font-bold mb-6 text-gray-800 border-b-2 border-gray-800 pb-2">
-                EDUCATION & CERTIFICATIONS
+                <EditableField
+                  value={cvData.sectionTitles.education}
+                  onSave={(value) => dispatch(updateSectionTitle({ section: 'education', value }))}
+                />
               </h3>
               {cvData.education.map((edu, index) => (
                 <div key={index} className="mb-6">

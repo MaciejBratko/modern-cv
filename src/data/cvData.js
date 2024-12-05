@@ -1,4 +1,12 @@
 const cvData = {
+  sectionTitles: {
+    profile: "PROFILE",
+    contact: "CONTACT",
+    interests: "INTERESTS",
+    workExperience: "WORK EXPERIENCE",
+    skills: "SKILLS",
+    education: "EDUCATION & CERTIFICATIONS"
+  },
   personalInfo: {
     name: "MACIEJ BRATKO",
     title: "IT Specialist at Hemmersbach GmbH",
