@@ -169,7 +169,7 @@ const ModernCV = () => {
                     onSave={(value) => dispatch(updateSectionTitle({ section: 'interests', value }))}
                   />
                 </h3>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <ul className="list-none list-inside text-gray-300 space-y-2">
                   {cvData.personalInfo.interests.map((interest, index) => (
                     <li key={index}>
                       <EditableField
@@ -224,7 +224,7 @@ const ModernCV = () => {
                       onSave={(value) => dispatch(updateWorkExperience({ index, field: 'location', value }))}
                     />
                   </p>
-                  <ul className="list-disc list-inside text-gray-700">
+                  <ul className="list-none list-inside text-gray-700">
                     {work.responsibilities.map((resp, idx) => (
                       <li key={idx}>
                         <EditableField
@@ -260,7 +260,7 @@ const ModernCV = () => {
                     <h4 className="text-lg font-semibold text-gray-700 mb-3">
                       {category.replace(/([A-Z])/g, ' $1').trim()}:
                     </h4>
-                    <ul className="list-disc list-inside text-gray-700">
+                    <ul className="list-none list-inside text-gray-700">
                       {skills.map((skill, index) => (
                         <li key={index}>
                           <EditableField
@@ -305,7 +305,7 @@ const ModernCV = () => {
                       />
                     </p>
                   )}
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <ul className="list-none list-inside text-gray-700 space-y-1">
                     {edu.details?.map((detail, idx) => (
                       <li key={idx}>
                         <EditableField
