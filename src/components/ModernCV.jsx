@@ -9,11 +9,11 @@ import {
   updateSkill, 
   updateEducation,
   updateProfilePicture,
-  updateSectionTitle
+  updateSectionTitle,
+  updateSkillCategory
 } from "../redux/cvSlice";
 
 const ModernCV = () => {
-  // Keep the .cv since it's configured in the store
   const cvData = useSelector((state) => state.cv);
   const dispatch = useDispatch();
   const fileInputRef = useRef(null);
@@ -67,6 +67,27 @@ const ModernCV = () => {
         console.error('Error processing image:', error);
         alert('Failed to update profile picture. Please try a smaller image.');
       }
+    }
+  };
+
+  const formatSkillCategory = (category) => {
+    // Convert camelCase to space-separated words
+    return category.replace(/([A-Z])/g, ' $1').trim();
+  };
+
+  const handleSkillCategoryUpdate = (oldCategory, newValue) => {
+    // Convert the new value to a proper object key format (camelCase)
+    const newCategory = newValue
+      .split(' ')
+      .map((word, index) => 
+        index === 0 
+          ? word.toLowerCase() 
+          : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+      )
+      .join('');
+
+    if (oldCategory !== newCategory) {
+      dispatch(updateSkillCategory({ oldCategory, newCategory }));
     }
   };
 
@@ -258,7 +279,10 @@ const ModernCV = () => {
                 {Object.entries(cvData.skills).map(([category, skills]) => (
                   <div key={category}>
                     <h4 className="text-lg font-semibold text-gray-700 mb-3">
-                      {category.replace(/([A-Z])/g, ' $1').trim()}:
+                      <EditableField
+                        value={formatSkillCategory(category)}
+                        onSave={(value) => handleSkillCategoryUpdate(category, value)}
+                      />
                     </h4>
                     <ul className="list-none list-inside text-gray-700">
                       {skills.map((skill, index) => (

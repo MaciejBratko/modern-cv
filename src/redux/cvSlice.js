@@ -62,6 +62,14 @@ const cvSlice = createSlice({
       state.skills[category][index] = value;
       saveState(state);
     },
+    updateSkillCategory: (state, action) => {
+      const { oldCategory, newCategory } = action.payload;
+      if (oldCategory !== newCategory) {
+        state.skills[newCategory] = state.skills[oldCategory];
+        delete state.skills[oldCategory];
+        saveState(state);
+      }
+    },
     updateEducation: (state, action) => {
       const { index, field, value } = action.payload;
       state.education[index][field] = value;
@@ -76,7 +84,8 @@ export const {
   updateWorkExperience, 
   updateSkill, 
   updateEducation,
-  updateProfilePicture
+  updateProfilePicture,
+  updateSkillCategory
 } = cvSlice.actions;
 
 export default cvSlice.reducer;
