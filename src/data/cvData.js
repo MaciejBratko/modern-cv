@@ -19,7 +19,7 @@ const cvData = {
     },
     interests: [
       "General computer software development",
-      "Artificial intelligence (primarily language models)",
+      "Artificial intelligence (language models)",
       "Computer games (history and development)"
     ]
   },
