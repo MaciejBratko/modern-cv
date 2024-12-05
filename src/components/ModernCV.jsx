@@ -1,9 +1,19 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Mail, Phone, Github, Code } from "lucide-react";
 import profilePic from "../profile_pic.JPG";
-import cvData from "../data/cvData";
+import EditableField from "./EditableField";
+import { 
+  updatePersonalInfo, 
+  updateWorkExperience, 
+  updateSkill, 
+  updateEducation 
+} from "../redux/cvSlice";
 
 const ModernCV = () => {
+  const cvData = useSelector((state) => state.cv);
+  const dispatch = useDispatch();
+
   const CVContent = () => (
     <div className="min-h-screen bg-gray-50 p-6 md:p-12">
       <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
@@ -17,10 +27,16 @@ const ModernCV = () => {
                 className="rounded-full w-48 h-48 object-cover mb-4 border-4 border-gray-600"
               />
               <h2 className="text-2xl font-bold mb-2">
-                {cvData.personalInfo.name}
+                <EditableField
+                  value={cvData.personalInfo.name}
+                  onSave={(value) => dispatch(updatePersonalInfo({ field: 'name', value }))}
+                />
               </h2>
               <p className="text-gray-300 text-center">
-                {cvData.personalInfo.title}
+                <EditableField
+                  value={cvData.personalInfo.title}
+                  onSave={(value) => dispatch(updatePersonalInfo({ field: 'title', value }))}
+                />
               </p>
             </div>
 
@@ -29,7 +45,13 @@ const ModernCV = () => {
                 <h3 className="text-xl font-semibold mb-4 border-b border-gray-600 pb-2">
                   PROFILE
                 </h3>
-                <p className="text-gray-300">{cvData.personalInfo.profile}</p>
+                <p className="text-gray-300">
+                  <EditableField
+                    value={cvData.personalInfo.profile}
+                    onSave={(value) => dispatch(updatePersonalInfo({ field: 'profile', value }))}
+                    multiline
+                  />
+                </p>
               </section>
 
               <section>
@@ -39,20 +61,24 @@ const ModernCV = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Phone className="w-5 h-5" />
-                    <span>{cvData.personalInfo.contact.phone}</span>
+                    <EditableField
+                      value={cvData.personalInfo.contact.phone}
+                      onSave={(value) => dispatch(updatePersonalInfo({ field: 'contact', subfield: 'phone', value }))}
+                    />
                   </div>
                   <div className="flex items-center space-x-3">
                     <Mail className="w-5 h-5" />
-                    <span>{cvData.personalInfo.contact.email}</span>
+                    <EditableField
+                      value={cvData.personalInfo.contact.email}
+                      onSave={(value) => dispatch(updatePersonalInfo({ field: 'contact', subfield: 'email', value }))}
+                    />
                   </div>
                   <div className="flex items-center space-x-3">
                     <Github className="w-5 h-5" />
-                    <a
-                      href={cvData.personalInfo.contact.github}
-                      className="hover:text-blue-300 transition"
-                    >
-                      GitHub Profile
-                    </a>
+                    <EditableField
+                      value={cvData.personalInfo.contact.github}
+                      onSave={(value) => dispatch(updatePersonalInfo({ field: 'contact', subfield: 'github', value }))}
+                    />
                   </div>
                 </div>
               </section>
@@ -63,7 +89,16 @@ const ModernCV = () => {
                 </h3>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
                   {cvData.personalInfo.interests.map((interest, index) => (
-                    <li key={index}>{interest}</li>
+                    <li key={index}>
+                      <EditableField
+                        value={interest}
+                        onSave={(value) => {
+                          const newInterests = [...cvData.personalInfo.interests];
+                          newInterests[index] = value;
+                          dispatch(updatePersonalInfo({ field: 'interests', value: newInterests }));
+                        }}
+                      />
+                    </li>
                   ))}
                 </ul>
               </section>
@@ -88,14 +123,38 @@ const ModernCV = () => {
                 <div key={index} className="mb-6">
                   <div className="flex justify-between items-start mb-2">
                     <h4 className="text-xl font-semibold text-gray-700">
-                      {work.title}
+                      <EditableField
+                        value={work.title}
+                        onSave={(value) => dispatch(updateWorkExperience({ index, field: 'title', value }))}
+                      />
                     </h4>
-                    <span className="text-gray-600">{work.period}</span>
+                    <EditableField
+                      value={work.period}
+                      onSave={(value) => dispatch(updateWorkExperience({ index, field: 'period', value }))}
+                    />
                   </div>
-                  <p className="text-gray-600 mb-2">{work.location}</p>
+                  <p className="text-gray-600 mb-2">
+                    <EditableField
+                      value={work.location}
+                      onSave={(value) => dispatch(updateWorkExperience({ index, field: 'location', value }))}
+                    />
+                  </p>
                   <ul className="list-disc list-inside text-gray-700">
                     {work.responsibilities.map((resp, idx) => (
-                      <li key={idx}>{resp}</li>
+                      <li key={idx}>
+                        <EditableField
+                          value={resp}
+                          onSave={(value) => {
+                            const newResponsibilities = [...work.responsibilities];
+                            newResponsibilities[idx] = value;
+                            dispatch(updateWorkExperience({ 
+                              index, 
+                              field: 'responsibilities', 
+                              value: newResponsibilities 
+                            }));
+                          }}
+                        />
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -108,46 +167,23 @@ const ModernCV = () => {
                 SKILLS
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-700 mb-3">
-                    Programming Languages:
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-700">
-                    {cvData.skills.programmingLanguages.map((skill, index) => (
-                      <li key={index}>{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-700 mb-3">
-                    Web Development:
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-700">
-                    {cvData.skills.webDevelopment.map((skill, index) => (
-                      <li key={index}>{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-700 mb-3">
-                    System Administration:
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-700">
-                    {cvData.skills.systemAdministration.map((skill, index) => (
-                      <li key={index}>{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-700 mb-3">
-                    Version Control:
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-700">
-                    {cvData.skills.versionControl.map((skill, index) => (
-                      <li key={index}>{skill}</li>
-                    ))}
-                  </ul>
-                </div>
+                {Object.entries(cvData.skills).map(([category, skills]) => (
+                  <div key={category}>
+                    <h4 className="text-lg font-semibold text-gray-700 mb-3">
+                      {category.replace(/([A-Z])/g, ' $1').trim()}:
+                    </h4>
+                    <ul className="list-disc list-inside text-gray-700">
+                      {skills.map((skill, index) => (
+                        <li key={index}>
+                          <EditableField
+                            value={skill}
+                            onSave={(value) => dispatch(updateSkill({ category, index, value }))}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </section>
 
@@ -160,19 +196,48 @@ const ModernCV = () => {
                 <div key={index} className="mb-6">
                   <div className="flex justify-between items-start mb-2">
                     <h4 className="text-xl font-semibold text-gray-700">
-                      {edu.institution}
+                      <EditableField
+                        value={edu.institution}
+                        onSave={(value) => dispatch(updateEducation({ index, field: 'institution', value }))}
+                      />
                     </h4>
-                    <span className="text-gray-600">{edu.period}</span>
+                    <EditableField
+                      value={edu.period}
+                      onSave={(value) => dispatch(updateEducation({ index, field: 'period', value }))}
+                    />
                   </div>
                   {edu.description && (
-                    <p className="text-gray-700 mb-2">{edu.description}</p>
+                    <p className="text-gray-700 mb-2">
+                      <EditableField
+                        value={edu.description}
+                        onSave={(value) => dispatch(updateEducation({ index, field: 'description', value }))}
+                      />
+                    </p>
                   )}
                   <ul className="list-disc list-inside text-gray-700 space-y-1">
                     {edu.details?.map((detail, idx) => (
-                      <li key={idx}>{detail}</li>
+                      <li key={idx}>
+                        <EditableField
+                          value={detail}
+                          onSave={(value) => {
+                            const newDetails = [...edu.details];
+                            newDetails[idx] = value;
+                            dispatch(updateEducation({ index, field: 'details', value: newDetails }));
+                          }}
+                        />
+                      </li>
                     ))}
                     {edu.certifications?.map((cert, idx) => (
-                      <li key={idx}>{cert}</li>
+                      <li key={idx}>
+                        <EditableField
+                          value={cert}
+                          onSave={(value) => {
+                            const newCertifications = [...edu.certifications];
+                            newCertifications[idx] = value;
+                            dispatch(updateEducation({ index, field: 'certifications', value: newCertifications }));
+                          }}
+                        />
+                      </li>
                     ))}
                   </ul>
                 </div>
