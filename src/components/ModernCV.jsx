@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Mail, Phone, Github, Code } from "lucide-react";
 import profilePic from "../profile_pic.JPG";
@@ -7,12 +7,66 @@ import {
   updatePersonalInfo, 
   updateWorkExperience, 
   updateSkill, 
-  updateEducation 
+  updateEducation,
+  updateProfilePicture
 } from "../redux/cvSlice";
 
 const ModernCV = () => {
   const cvData = useSelector((state) => state.cv);
   const dispatch = useDispatch();
+  const fileInputRef = useRef(null);
+
+  const handleImageClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const compressImage = (file) => {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+          
+          // Calculate new dimensions while maintaining aspect ratio
+          const maxSize = 400;
+          if (width > height && width > maxSize) {
+            height = (height * maxSize) / width;
+            width = maxSize;
+          } else if (height > maxSize) {
+            width = (width * maxSize) / height;
+            height = maxSize;
+          }
+          
+          canvas.width = width;
+          canvas.height = height;
+          
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          
+          // Compress as JPEG with quality 0.7
+          resolve(canvas.toDataURL('image/jpeg', 0.7));
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const handleImageChange = async (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      try {
+        const compressedImage = await compressImage(file);
+        dispatch(updateProfilePicture(compressedImage));
+      } catch (error) {
+        console.error('Error processing image:', error);
+        alert('Failed to update profile picture. Please try a smaller image.');
+      }
+    }
+  };
 
   const CVContent = () => (
     <div className="min-h-screen bg-gray-50 p-6 md:p-12">
@@ -21,10 +75,27 @@ const ModernCV = () => {
           {/* Sidebar */}
           <div className="w-full md:w-1/3 bg-gray-800 text-white p-8">
             <div className="flex flex-col items-center mb-8">
-              <img
-                src={profilePic}
-                alt="Profile"
-                className="rounded-full w-48 h-48 object-cover mb-4 border-4 border-gray-600"
+              <div 
+                className="relative group cursor-pointer"
+                onClick={handleImageClick}
+              >
+                <img
+                  src={cvData.personalInfo.profilePicture || profilePic}
+                  alt="Profile"
+                  className="rounded-full w-48 h-48 object-cover mb-4 border-4 border-gray-600 transition-opacity group-hover:opacity-80"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm">
+                    Change Photo
+                  </span>
+                </div>
+              </div>
+              <input
+                type="file"
+                ref={fileInputRef}
+                onChange={handleImageChange}
+                accept="image/*"
+                className="hidden"
               />
               <h2 className="text-2xl font-bold mb-2">
                 <EditableField

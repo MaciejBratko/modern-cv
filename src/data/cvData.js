@@ -3,6 +3,7 @@ const cvData = {
     name: "MACIEJ BRATKO",
     title: "IT Specialist at Hemmersbach GmbH",
     profile: "Experienced IT specialist at Hemmersbach GmbH, specializing in DaaS solutions and on-site troubleshooting. Professional certifications EE.08 and EE.09 holder, currently developing Full Stack JavaScript Development skills.",
+    profilePicture: null,
     contact: {
       phone: "+48 690 136 499",
       email: "maciej.bratko@outlook.com",

@@ -14,6 +14,18 @@ const loadState = () => {
   }
 };
 
+// Save state to localStorage with error handling
+const saveState = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('cvData', serializedState);
+    return true;
+  } catch (err) {
+    console.error('Failed to save state to localStorage:', err);
+    return false;
+  }
+};
+
 const cvSlice = createSlice({
   name: 'cv',
   initialState: loadState(),
@@ -25,22 +37,30 @@ const cvSlice = createSlice({
       } else {
         state.personalInfo[field] = value;
       }
-      localStorage.setItem('cvData', JSON.stringify(state));
+      saveState(state);
+    },
+    updateProfilePicture: (state, action) => {
+      state.personalInfo.profilePicture = action.payload;
+      if (!saveState(state)) {
+        // If saving to localStorage fails, keep the old picture
+        state.personalInfo.profilePicture = state.personalInfo.profilePicture;
+        throw new Error('Failed to save profile picture. The image might be too large.');
+      }
     },
     updateWorkExperience: (state, action) => {
       const { index, field, value } = action.payload;
       state.workExperience[index][field] = value;
-      localStorage.setItem('cvData', JSON.stringify(state));
+      saveState(state);
     },
     updateSkill: (state, action) => {
       const { category, index, value } = action.payload;
       state.skills[category][index] = value;
-      localStorage.setItem('cvData', JSON.stringify(state));
+      saveState(state);
     },
     updateEducation: (state, action) => {
       const { index, field, value } = action.payload;
       state.education[index][field] = value;
-      localStorage.setItem('cvData', JSON.stringify(state));
+      saveState(state);
     }
   }
 });
@@ -49,7 +69,8 @@ export const {
   updatePersonalInfo, 
   updateWorkExperience, 
   updateSkill, 
-  updateEducation 
+  updateEducation,
+  updateProfilePicture
 } = cvSlice.actions;
 
 export default cvSlice.reducer;
