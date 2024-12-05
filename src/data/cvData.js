@@ -1,83 +1,85 @@
 const cvData = {
   sectionTitles: {
-    profile: "PROFILE",
-    contact: "CONTACT",
-    interests: "INTERESTS",
-    workExperience: "WORK EXPERIENCE",
-    skills: "SKILLS",
-    education: "EDUCATION & CERTIFICATIONS"
+    profile: "PROFIL",
+    contact: "KONTAKT",
+    interests: "ZAINTERESOWANIA",
+    workExperience: "DOŚWIADCZENIE ZAWODOWE",
+    skills: "UMIEJĘTNOŚCI",
+    education: "WYKSZTAŁCENIE I CERTYFIKATY",
   },
   personalInfo: {
     name: "MACIEJ BRATKO",
-    title: "IT Specialist at Hemmersbach GmbH",
-    profile: "Experienced IT specialist at Hemmersbach GmbH, specializing in DaaS solutions and on-site troubleshooting. Professional certifications EE.08 and EE.09 holder, currently developing Full Stack JavaScript Development skills.",
+    title: "Specjalista IT w Hemmersbach GmbH",
+    profile:
+      "Doświadczony specjalista IT w Hemmersbach GmbH, specjalizujący się w rozwiązaniach DaaS i rozwiązywaniu problemów na miejscu. Posiadacz certyfikatów zawodowych EE.08 i EE.09, obecnie rozwija umiejętności w zakresie Full Stack JavaScript Development.",
     profilePicture: null,
     contact: {
       phone: "+48 690 136 499",
       email: "maciej.bratko@outlook.com",
-      github: "https://github.com/MaciejBratko"
+      github: "https://github.com/MaciejBratko",
     },
     interests: [
-      "General computer software development",
-      "Artificial intelligence (language models)",
-      "Computer games (history and development)"
-    ]
+      "Ogólny rozwój oprogramowania komputerowego",
+      "Sztuczna inteligencja (modele językowe)",
+      "Gry komputerowe (historia i rozwój)",
+    ],
   },
   workExperience: [
     {
-      title: "IT Specialist - Hemmersbach GmbH",
-      period: "09/2021 -- Present",
+      title: "Specjalista IT - Hemmersbach GmbH",
+      period: "09/2021 -- obecnie",
       location: "Bielany Wrocławskie",
       responsibilities: [
-        "Preparing DaaS equipment for international shipment",
-        "Implementing and maintaining IT infrastructure solutions",
-        "Providing technical support and troubleshooting services"
-      ]
-    }
+        "Przygotowywanie sprzętu DaaS do wysyłki międzynarodowej",
+        "Wdrażanie i utrzymanie rozwiązań infrastruktury IT",
+        "Świadczenie wsparcia technicznego i usług rozwiązywania problemów",
+      ],
+    },
   ],
   skills: {
     programmingLanguages: [
       "HTML, CSS, JavaScript",
       "React",
-      "Front-end and back-end development"
+      "Rozwój front-end i back-end",
     ],
     webDevelopment: [
-      "Front-end and back-end development",
-      "Responsive design",
-      "Web application architecture"
+      "Rozwój front-end i back-end",
+      "Projektowanie responsywne",
+      "Architektura aplikacji webowych",
     ],
     systemAdministration: [
-      "Computer systems and peripheral devices",
-      "Network configuration and maintenance",
-      "Windows and Linux proficiency"
+      "Systemy komputerowe i urządzenia peryferyjne",
+      "Konfiguracja i utrzymanie sieci",
+      "Biegła znajomość Windows i Linux",
     ],
     versionControl: [
-      "Git and GitHub repository management",
-      "Version control system experience",
-      "Team leadership experience"
-    ]
+      "Zarządzanie repozytoriami Git i GitHub",
+      "Doświadczenie w systemach kontroli wersji",
+      "Doświadczenie w kierowaniu zespołem",
+    ],
   },
   education: [
     {
       institution: "Full Stack Javascript Developer — GoIT",
       period: "01/2024 -- 11/2024",
       details: [
-        "Creating semantic page structures and responsive layouts",
-        "React, Redux, Node.js, and React Native",
-        "Backend development with Express.js and MongoDB",
-        "Multiple individual and team projects"
-      ]
+        "Tworzenie semantycznych struktur stron i responsywnych layoutów",
+        "React, Redux, Node.js i React Native",
+        "Rozwój backend z Express.js i MongoDB",
+        "Liczne projekty indywidualne i zespołowe",
+      ],
     },
     {
       institution: "Powiatowy Zespół Szkół nr 2 im. Wincentego Witosa",
       period: "2017 -- 2020",
-      description: "IT Technician specialization with certifications:",
+      description: "Specjalizacja Technik Informatyk z certyfikatami:",
       certifications: [
-        "EE.09 Programming, creating and administering websites and databases",
-        "EE.08 Assembly and operation of computer systems"
-      ]
-    }
-  ]
+        "EE.09 Programowanie, tworzenie i administrowanie stronami internetowymi i bazami danych",
+        "EE.08 Montaż i eksploatacja systemów komputerowych",
+      ],
+    },
+  ],
 };
 
 export default cvData;
+  
