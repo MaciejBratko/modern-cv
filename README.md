@@ -19,7 +19,6 @@ A modern, responsive curriculum vitae built with React and Tailwind CSS. This pr
 - ⚡ Built with React and Tailwind CSS
 - 🚀 Powered by Vite for fast development
 - 📦 Lucide React icons integration
-- 🎭 CLSX for conditional styling
 
 ## Project Structure
 
@@ -48,7 +47,6 @@ modern-cv/
 - Tailwind CSS
 - Vite
 - Lucide React (for icons)
-- CLSX (for conditional class names)
 - PostCSS
 - Autoprefixer
 
