@@ -12,7 +12,7 @@ A modern, responsive curriculum vitae built with React and Tailwind CSS. This pr
 - 📱 Mobile-first approach
 - 🌗 Dark sidebar with light main content
 - 📊 Clean layout for skills and experience
-- 🔧 Built with React and Tailwind CSS
+-  Built with React and Tailwind CSS
 - ⚡ Powered by Vite for fast development
 - 📦 Lucide React icons integration
 

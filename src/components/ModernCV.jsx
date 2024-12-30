@@ -1,10 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Mail, Phone, Github, Code } from "lucide-react";
 import profilePic from "../profile_pic.JPG";
+import cvData from "../data/cvData";
 
 const ModernCV = () => {
-  const cvData = useSelector((state) => state.cv);
 
   const formatSkillCategory = (category) => {
     return category.replace(/([A-Z])/g, ' $1').trim();
