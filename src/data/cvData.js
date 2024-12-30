@@ -2,25 +2,25 @@ const cvData = {
   sectionTitles: {
     profile: "PROFILE",
     contact: "CONTACT",
-    interests: "INTERESTS",
+    projects: "PROJECTS",
     workExperience: "WORK EXPERIENCE",
     skills: "SKILLS",
     education: "EDUCATION & CERTIFICATIONS"
   },
   personalInfo: {
     name: "MACIEJ BRATKO",
-    title: "IT Specialist at Hemmersbach GmbH",
-    profile: "Experienced IT specialist at Hemmersbach GmbH, specializing in DaaS solutions and on-site troubleshooting. Professional certifications EE.08 and EE.09 holder, currently developing Full Stack JavaScript Development skills.",
+    title: "Frontend Developer & IT Specialist",
+    profile: "IT specialist with strong technical background and frontend development skills. Proficient in modern web development tools and methodologies, with B2 English proficiency. Experienced in meeting project deadlines and working with HTTP-based APIs including Axios. Currently expanding Full Stack JavaScript development expertise while maintaining professional IT responsibilities.",
     profilePicture: null,
     contact: {
       phone: "+48 690 136 499",
       email: "maciej.bratko@outlook.com",
       github: "https://github.com/MaciejBratko"
     },
-    interests: [
-      "General computer software development",
-      "Artificial intelligence (language models)",
-      "Computer games (history and development)"
+    projects: [
+      "Fresh Harvest Box - React-based fruit store frontend with Axios API integration",
+      "Cinemania - API-powered movie catalogue using modern HTTP methods",
+      "Kapu$ta - Full-Stack app with responsive design and UX focus"
     ]
   },
   workExperience: [
@@ -29,32 +29,33 @@ const cvData = {
       period: "09/2021 -- Present",
       location: "Bielany Wrocławskie",
       responsibilities: [
-        "Preparing DaaS equipment for international shipment",
-        "Implementing and maintaining IT infrastructure solutions",
-        "Providing technical support and troubleshooting services"
+        "Implementing and maintaining IT infrastructure solutions using agile methodologies",
+        "Managing technical projects with strict deadline adherence",
+        "Collaborating with international teams using B2-level English"
       ]
     }
   ],
   skills: {
     programmingLanguages: [
-      "HTML, CSS, JavaScript",
-      "React",
-      "Front-end and back-end development"
+      "HTML5, CSS3, JavaScript (ES6+)",
+      "React ecosystem",
+      "TypeScript fundamentals"
     ],
     webDevelopment: [
-      "Front-end and back-end development",
-      "Responsive design",
-      "Web application architecture"
+      "HTTP protocol methods expertise",
+      "REST APIs and Axios library",
+      "Docker basics for development",
+      "Figma for UI/UX design"
     ],
-    systemAdministration: [
-      "Computer systems and peripheral devices",
-      "Network configuration and maintenance",
-      "Windows and Linux proficiency"
+    methodologies: [
+      "Agile development practices",
+      "Version control with Git",
+      "Software development lifecycle"
     ],
-    versionControl: [
-      "Git and GitHub repository management",
-      "Version control system experience",
-      "Team leadership experience"
+    technicalTools: [
+      "Frontend development tools",
+      "UI/UX design principles",
+      "Cross-browser compatibility testing"
     ]
   },
   education: [
@@ -62,16 +63,16 @@ const cvData = {
       institution: "Full Stack Javascript Developer — GoIT",
       period: "01/2024 -- 11/2024",
       details: [
-        "Creating semantic page structures and responsive layouts",
-        "React, Redux, Node.js, and React Native",
-        "Backend development with Express.js and MongoDB",
-        "Multiple individual and team projects"
+        "Modern frontend development with React",
+        "HTTP/REST API integration using Axios",
+        "UI/UX design principles and implementation",
+        "Docker containerization basics"
       ]
     },
     {
       institution: "Powiatowy Zespół Szkół nr 2 im. Wincentego Witosa",
       period: "2017 -- 2020",
-      description: "IT Technician specialization with certifications:",
+      description: "IT Technician specialization with technical certifications:",
       certifications: [
         "EE.09 Programming, creating and administering websites and databases",
         "EE.08 Assembly and operation of computer systems"

@@ -62,10 +62,10 @@ const ModernCV = () => {
 
               <section>
                 <h3 className="text-xl font-semibold mb-4 border-b border-gray-600 pb-2">
-                  {cvData.sectionTitles.interests}
+                  {cvData.sectionTitles.projects}
                 </h3>
                 <ul className="list-none list-inside text-gray-300 space-y-2">
-                  {cvData.personalInfo.interests.map((interest, index) => (
+                  {cvData.personalInfo.projects.map((interest, index) => (
                     <li key={index}>{interest}</li>
                   ))}
                 </ul>
