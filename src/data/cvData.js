@@ -1,17 +1,17 @@
 const cvData = {
   sectionTitles: {
-    profile: "PROFILE",
-    contact: "CONTACT",
-    projects: "PROJECTS",
-    workExperience: "WORK EXPERIENCE",
-    skills: "SKILLS",
-    education: "EDUCATION & CERTIFICATIONS",
+    profile: "PROFIL",
+    contact: "KONTAKT",
+    projects: "PROJEKTY",
+    workExperience: "DOŚWIADCZENIE ZAWODOWE",
+    skills: "UMIEJĘTNOŚCI",
+    education: "EDUKACJA I CERTYFIKATY",
   },
   personalInfo: {
     name: "MACIEJ BRATKO",
-    title: "Frontend Developer & IT Specialist",
+    title: "Frontend Developer i Specjalista IT",
     profile:
-      "IT specialist with strong technical background and frontend development skills. Proficient in modern web development tools and methodologies, with B2 English proficiency. Experienced in meeting project deadlines and working with HTTP-based APIs including Axios. Currently expanding Full Stack JavaScript development expertise while maintaining professional IT responsibilities.",
+      "Specjalista IT z solidnym zapleczem technicznym i umiejętnościami w zakresie frontend developmentu. Biegły w nowoczesnych narzędziach i metodologiach tworzenia stron internetowych, ze znajomością języka angielskiego na poziomie B2. Doświadczony w dotrzymywaniu terminów projektowych i pracy z interfejsami API opartymi na HTTP, w tym Axios. Obecnie poszerza wiedzę z zakresu Full Stack JavaScript development, jednocześnie utrzymując profesjonalne obowiązki IT.",
     profilePicture: null,
     contact: {
       phone: "+48 690 136 499",
@@ -20,52 +20,52 @@ const cvData = {
     },
     projects: [
       {
-        name: "Kapu$ta - Full-Stack app with responsive design and UX focus",
+        name: "Kapu$ta - Aplikacja Full-Stack z responsywnym designem i naciskiem na UX",
         url: "https://github.com/EnChyb/FE-Kapusta-Team-Project",
       },
       {
-        name: "Fresh Harvest Box - React-based fruit store frontend with Axios API integration",
+        name: "Fresh Harvest Box - Frontend sklepu owocowego w React z integracją API Axios",
         url: "https://github.com/MaciejBratko/Fresh_Harvest_Box",
       },
       {
-        name: "Cinemania - API-powered movie catalogue using modern HTTP methods",
+        name: "Cinemania - Katalog filmowy oparty na API wykorzystujący nowoczesne metody HTTP",
         url: "https://github.com/RafalSz1270/Cinemania-JS",
       },
     ],
   },
   workExperience: [
     {
-      title: "IT Specialist - Hemmersbach GmbH",
-      period: "09/2021 -- Present",
+      title: "Specjalista IT - Hemmersbach GmbH",
+      period: "09/2021 -- Obecnie",
       location: "Bielany Wrocławskie",
       responsibilities: [
-        "Implementing and maintaining IT infrastructure solutions using agile methodologies",
-        "Managing technical projects with strict deadline adherence",
-        "Collaborating with international teams using B2-level English",
+        "Wdrażanie i utrzymanie rozwiązań infrastruktury IT z wykorzystaniem metodologii zwinnych",
+        "Zarządzanie projektami technicznymi z zachowaniem ścisłych terminów",
+        "Współpraca z zespołami międzynarodowymi przy użyciu języka angielskiego na poziomie B2",
       ],
     },
   ],
   skills: {
     programmingLanguages: [
       "HTML5, CSS3, JavaScript (ES6+)",
-      "React ecosystem",
-      "TypeScript fundamentals",
+      "Ekosystem React",
+      "Podstawy TypeScript",
     ],
     webDevelopment: [
-      "HTTP protocol methods expertise",
-      "REST APIs and Axios library",
-      "Docker basics for development",
-      "Figma for UI/UX design",
+      "Znajomość metod protokołu HTTP",
+      "REST API i biblioteka Axios",
+      "Podstawy Docker dla developmentu",
+      "Figma do projektowania UI/UX",
     ],
     methodologies: [
-      "Agile development practices",
-      "Version control with Git",
-      "Software development lifecycle",
+      "Praktyki programowania zwinnego",
+      "Kontrola wersji Git",
+      "Cykl życia oprogramowania",
     ],
     technicalTools: [
-      "Frontend development tools",
-      "UI/UX design principles",
-      "Cross-browser compatibility testing",
+      "Narzędzia do rozwoju frontend",
+      "Zasady projektowania UI/UX",
+      "Testowanie kompatybilności cross-browser",
     ],
   },
   education: [
@@ -73,20 +73,20 @@ const cvData = {
       institution: "Full Stack Javascript Developer — GoIT",
       period: "01/2024 -- 11/2024",
       details: [
-        "Modern frontend development with React",
-        "HTTP/REST API integration using Axios",
-        "UI/UX design principles and implementation",
-        "Docker containerization basics",
+        "Nowoczesny frontend development w React",
+        "Integracja HTTP/REST API z użyciem Axios",
+        "Zasady i implementacja UI/UX",
+        "Podstawy konteneryzacji Docker",
       ],
     },
     {
       institution: "Powiatowy Zespół Szkół nr 2 im. Wincentego Witosa",
       period: "2017 -- 2020",
       description:
-        "IT Technician specialization with technical certifications:",
+        "Specjalizacja Technik Informatyk z certyfikatami technicznymi:",
       certifications: [
-        "EE.09 Programming, creating and administering websites and databases",
-        "EE.08 Assembly and operation of computer systems",
+        "EE.09 Programowanie, tworzenie i administrowanie stronami internetowymi i bazami danych",
+        "EE.08 Montaż i eksploatacja systemów komputerowych",
       ],
     },
   ],
