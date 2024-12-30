@@ -65,9 +65,25 @@ const ModernCV = () => {
                   {cvData.sectionTitles.projects}
                 </h3>
                 <ul className="list-none list-inside text-gray-300 space-y-2">
-                  {cvData.personalInfo.projects.map((interest, index) => (
-                    <li key={index}>{interest}</li>
-                  ))}
+                  {cvData.personalInfo.projects.map((project, index) => {
+                    const projectUrls = [
+                      "https://github.com/MaciejBratko/Fresh_Harvest_Box",
+                      "https://github.com/RafalSz1270/Cinemania-JS",
+                      "https://github.com/EnChyb/FE-Kapusta-Team-Project"
+                    ];
+                    return (
+                      <li key={index}>
+                        <a 
+                          href={projectUrls[index]} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="hover:text-gray-100"
+                        >
+                          {project}
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </section>
 
