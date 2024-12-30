@@ -186,19 +186,19 @@ const ModernCV = () => {
               <section>
                 <h3 className="text-xl font-semibold mb-4 border-b border-gray-600 pb-2">
                   <EditableField
-                    value={cvData.sectionTitles.interests}
-                    onSave={(value) => dispatch(updateSectionTitle({ section: 'interests', value }))}
+                    value={cvData.sectionTitles.projects}
+                    onSave={(value) => dispatch(updateSectionTitle({ section: 'projects', value }))}
                   />
                 </h3>
                 <ul className="list-none list-inside text-gray-300 space-y-2">
-                  {cvData.personalInfo.interests.map((interest, index) => (
+                  {cvData.personalInfo.projects.map((project, index) => (
                     <li key={index}>
                       <EditableField
-                        value={interest}
+                        value={project}
                         onSave={(value) => {
-                          const newInterests = [...cvData.personalInfo.interests];
-                          newInterests[index] = value;
-                          dispatch(updatePersonalInfo({ field: 'interests', value: newInterests }));
+                          const newProjects = [...cvData.personalInfo.projects];
+                          newProjects[index] = value;
+                          dispatch(updatePersonalInfo({ field: 'projects', value: newProjects }));
                         }}
                       />
                     </li>
