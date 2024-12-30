@@ -37,7 +37,7 @@ modern-cv/
 
 ## Technologies Used
 
-- React 18
+- React
 - Tailwind CSS
 - Vite
 - Lucide React (for icons)
