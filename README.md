@@ -12,9 +12,14 @@ A modern, responsive curriculum vitae built with React and Tailwind CSS. This pr
 - 📱 Mobile-first approach
 - 🌗 Dark sidebar with light main content
 - 📊 Clean layout for skills and experience
--  Built with React and Tailwind CSS
-- ⚡ Powered by Vite for fast development
+- 🔄 Dynamic project links integration
+- 📝 Structured data management with cvData.js
+- 🎯 Responsive grid layout for skills section
+- 🏷️ Smart skill category formatting
+- ⚡ Built with React and Tailwind CSS
+- 🚀 Powered by Vite for fast development
 - 📦 Lucide React icons integration
+- 🎭 CLSX for conditional styling
 
 ## Project Structure
 
@@ -25,8 +30,10 @@ modern-cv/
 │   └── robots.txt
 ├── src/
 │   ├── components/
-│   │   ├── App/
-│   │   └── ReorganizedCV/
+│   │   └── ModernCV.jsx
+│   ├── data/
+│   │   └── cvData.js
+│   ├── profile_pic.JPG
 │   ├── index.css
 │   └── index.jsx
 ├── package.json
@@ -41,8 +48,25 @@ modern-cv/
 - Tailwind CSS
 - Vite
 - Lucide React (for icons)
+- CLSX (for conditional class names)
 - PostCSS
 - Autoprefixer
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run serve
+```
 
 ## Author
 
