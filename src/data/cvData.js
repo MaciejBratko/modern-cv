@@ -10,7 +10,7 @@ const cvData = {
   personalInfo: {
     name: "MACIEJ BRATKO",
     title: "IT Specialist at Hemmersbach GmbH",
-    profile: "Experienced IT specialist at Hemmersbach GmbH, specializing in DaaS solutions and on-site troubleshooting. Professional certifications EE.08 and EE.09 holder, currently developing Full Stack JavaScript Development skills.",
+    profile: "IT specialist with strong technical foundation and B2 English proficiency, currently expanding expertise in frontend development. Committed to meeting deadlines and delivering high-quality solutions. Experienced in implementing and maintaining IT infrastructure with a focus on modern web technologies.",
     profilePicture: null,
     contact: {
       phone: "+48 690 136 499",
@@ -18,9 +18,9 @@ const cvData = {
       github: "https://github.com/MaciejBratko"
     },
     interests: [
-      "General computer software development",
-      "Artificial intelligence (language models)",
-      "Computer games (history and development)"
+      "Frontend development and web technologies",
+      "Software development methodologies",
+      "UI/UX design principles"
     ]
   },
   workExperience: [
@@ -39,22 +39,22 @@ const cvData = {
     programmingLanguages: [
       "HTML, CSS, JavaScript",
       "React",
-      "Front-end and back-end development"
+      "RESTful APIs and Axios"
     ],
     webDevelopment: [
-      "Front-end and back-end development",
-      "Responsive design",
-      "Web application architecture"
+      "HTTP protocol methods",
+      "Frontend development",
+      "Responsive design"
     ],
-    systemAdministration: [
-      "Computer systems and peripheral devices",
-      "Network configuration and maintenance",
-      "Windows and Linux proficiency"
+    technicalTools: [
+      "Docker basics",
+      "Figma for UI design",
+      "Version control with Git"
     ],
-    versionControl: [
-      "Git and GitHub repository management",
-      "Version control system experience",
-      "Team leadership experience"
+    professionalSkills: [
+      "English language (B2 level)",
+      "Deadline-oriented work approach",
+      "Agile development methodologies"
     ]
   },
   education: [
@@ -62,10 +62,10 @@ const cvData = {
       institution: "Full Stack Javascript Developer — GoIT",
       period: "01/2024 -- 11/2024",
       details: [
-        "Creating semantic page structures and responsive layouts",
-        "React, Redux, Node.js, and React Native",
-        "Backend development with Express.js and MongoDB",
-        "Multiple individual and team projects"
+        "Frontend development with React",
+        "HTTP and RESTful API integration",
+        "Modern software development practices",
+        "UI/UX design fundamentals"
       ]
     },
     {
