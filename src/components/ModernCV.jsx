@@ -3,13 +3,15 @@ import { Mail, Phone, Github, Code } from "lucide-react";
 import profilePic from "../profile_pic.JPG";
 import cvData from "../data/cvData";
 
-const ModernCV = () => {
+const sectionHeaderClasses = "text-xl font-semibold mb-4 border-b border-gray-600 pb-2";
+const mainSectionHeaderClasses = "text-2xl font-bold mb-6 text-gray-800 border-b-2 border-gray-800 pb-2";
 
+const ModernCV = () => {
   const formatSkillCategory = (category) => {
     return category.replace(/([A-Z])/g, ' $1').trim();
   };
 
-  const CVContent = () => (
+  return (
     <div className="min-h-screen bg-gray-50 p-6 md:p-12">
       <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="flex flex-col md:flex-row">
@@ -31,7 +33,7 @@ const ModernCV = () => {
 
             <div className="space-y-6">
               <section>
-                <h3 className="text-xl font-semibold mb-4 border-b border-gray-600 pb-2">
+                <h3 className={sectionHeaderClasses}>
                   {cvData.sectionTitles.profile}
                 </h3>
                 <p className="text-gray-300">
@@ -40,7 +42,7 @@ const ModernCV = () => {
               </section>
 
               <section>
-                <h3 className="text-xl font-semibold mb-4 border-b border-gray-600 pb-2">
+                <h3 className={sectionHeaderClasses}>
                   {cvData.sectionTitles.contact}
                 </h3>
                 <div className="space-y-3">
@@ -60,29 +62,22 @@ const ModernCV = () => {
               </section>
 
               <section>
-                <h3 className="text-xl font-semibold mb-4 border-b border-gray-600 pb-2">
+                <h3 className={sectionHeaderClasses}>
                   {cvData.sectionTitles.projects}
                 </h3>
                 <ul className="list-none list-inside text-gray-300 space-y-2">
-                  {cvData.personalInfo.projects.map((project, index) => {
-                    const projectUrls = [
-                      "https://github.com/MaciejBratko/Fresh_Harvest_Box",
-                      "https://github.com/RafalSz1270/Cinemania-JS",
-                      "https://github.com/EnChyb/FE-Kapusta-Team-Project"
-                    ];
-                    return (
-                      <li key={index}>
-                        <a 
-                          href={projectUrls[index]} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="hover:text-gray-100"
-                        >
-                          {project}
-                        </a>
-                      </li>
-                    );
-                  })}
+                  {cvData.personalInfo.projects.map((project, index) => (
+                    <li key={index}>
+                      <a 
+                        href={project.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-gray-100"
+                      >
+                        {project.name}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </section>
 
@@ -99,7 +94,7 @@ const ModernCV = () => {
           <div className="w-full md:w-2/3 p-8">
             {/* Work Experience */}
             <section className="mb-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-800 border-b-2 border-gray-800 pb-2">
+              <h3 className={mainSectionHeaderClasses}>
                 {cvData.sectionTitles.workExperience}
               </h3>
               {cvData.workExperience.map((work, index) => (
@@ -124,7 +119,7 @@ const ModernCV = () => {
 
             {/* Skills */}
             <section className="mb-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-800 border-b-2 border-gray-800 pb-2">
+              <h3 className={mainSectionHeaderClasses}>
                 {cvData.sectionTitles.skills}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -145,7 +140,7 @@ const ModernCV = () => {
 
             {/* Education */}
             <section>
-              <h3 className="text-2xl font-bold mb-6 text-gray-800 border-b-2 border-gray-800 pb-2">
+              <h3 className={mainSectionHeaderClasses}>
                 {cvData.sectionTitles.education}
               </h3>
               {cvData.education.map((edu, index) => (
@@ -162,10 +157,10 @@ const ModernCV = () => {
                     </p>
                   )}
                   <ul className="list-none list-inside text-gray-700 space-y-1">
-                    {edu.details?.map((detail, idx) => (
+                    {edu.details && edu.details.map((detail, idx) => (
                       <li key={idx}>{detail}</li>
                     ))}
-                    {edu.certifications?.map((cert, idx) => (
+                    {edu.certifications && edu.certifications.map((cert, idx) => (
                       <li key={idx}>{cert}</li>
                     ))}
                   </ul>
@@ -175,12 +170,6 @@ const ModernCV = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
-
-  return (
-    <div>
-      <CVContent />
     </div>
   );
 };

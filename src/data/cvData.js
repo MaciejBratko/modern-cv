@@ -18,9 +18,18 @@ const cvData = {
       github: "https://github.com/MaciejBratko"
     },
     projects: [
-      "Fresh Harvest Box - React-based fruit store frontend with Axios API integration",
-      "Cinemania - API-powered movie catalogue using modern HTTP methods",
-      "Kapu$ta - Full-Stack app with responsive design and UX focus"
+      {
+        name: "Fresh Harvest Box - React-based fruit store frontend with Axios API integration",
+        url: "https://github.com/MaciejBratko/Fresh_Harvest_Box"
+      },
+      {
+        name: "Cinemania - API-powered movie catalogue using modern HTTP methods",
+        url: "https://github.com/RafalSz1270/Cinemania-JS"
+      },
+      {
+        name: "Kapu$ta - Full-Stack app with responsive design and UX focus",
+        url: "https://github.com/EnChyb/FE-Kapusta-Team-Project"
+      }
     ]
   },
   workExperience: [
