@@ -36,7 +36,7 @@ const cvData = {
   workExperience: [
     {
       title: "Specjalista IT - Hemmersbach GmbH",
-      period: "09/2021 -- Obecnie",
+      period: "09/2021 -- 03/2025",
       location: "Bielany Wrocławskie",
       responsibilities: [
         "Wdrażanie i utrzymanie rozwiązań infrastruktury IT z wykorzystaniem metodologii zwinnych",
@@ -47,9 +47,9 @@ const cvData = {
   ],
   skills: {
     programmingLanguages: [
-      "HTML5, CSS3, JavaScript (ES6+)",
-      "Ekosystem React",
-      "Podstawy TypeScript",
+      "HTML5, CSS3, JavaScript",
+      "Ekosystem React+Redux",
+      "TypeScript",
     ],
     webDevelopment: [
       "Znajomość metod protokołu HTTP",
@@ -65,7 +65,6 @@ const cvData = {
     technicalTools: [
       "Narzędzia do rozwoju frontend",
       "Zasady projektowania UI/UX",
-      "Testowanie kompatybilności cross-browser",
     ],
   },
   education: [
