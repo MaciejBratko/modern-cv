@@ -70,7 +70,7 @@ const cvData = {
   education: [
     {
       institution: "Full Stack Javascript Developer — GoIT",
-      period: "01/2024 -- 11/2024",
+      period: "01/2024 -- 12/2024",
       details: [
         "Nowoczesny frontend development w React",
         "Integracja HTTP/REST API z użyciem Axios",
