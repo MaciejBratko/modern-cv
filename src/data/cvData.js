@@ -36,20 +36,20 @@ const cvData = {
   workExperience: [
     {
       title: "IT Specialist - Hemmersbach GmbH",
-      period: "09/2021 -- Present",
+      period: "09/2021 -- 03/2025",
       location: "Bielany Wrocławskie",
       responsibilities: [
         "Implementing and maintaining IT infrastructure solutions using agile methodologies",
         "Managing technical projects with strict deadline adherence",
-        "Collaborating with international teams using B2-level English",
+        "Collaborating with international teams using C2-level English",
       ],
     },
   ],
   skills: {
     programmingLanguages: [
-      "HTML5, CSS3, JavaScript (ES6+)",
+      "HTML5, CSS3, JavaScript",
       "React ecosystem",
-      "TypeScript fundamentals",
+      "TypeScript",
     ],
     webDevelopment: [
       "HTTP protocol methods expertise",
@@ -71,7 +71,7 @@ const cvData = {
   education: [
     {
       institution: "Full Stack Javascript Developer — GoIT",
-      period: "01/2024 -- 11/2024",
+      period: "01/2024 -- 12/2024",
       details: [
         "Modern frontend development with React",
         "HTTP/REST API integration using Axios",
