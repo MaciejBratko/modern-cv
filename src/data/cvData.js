@@ -9,9 +9,9 @@ const cvData = {
   },
   personalInfo: {
     name: "MACIEJ BRATKO",
-    title: "Frontend Developer i Specjalista IT",
+    title: "Tester Manualny Oprogramowania",
     profile:
-      "Specjalista IT z solidnym zapleczem technicznym i umiejętnościami w zakresie frontend developmentu. Biegły w nowoczesnych narzędziach i metodologiach tworzenia stron internetowych, ze znajomością języka angielskiego na poziomie B2. Doświadczony w dotrzymywaniu terminów projektowych i pracy z interfejsami API opartymi na HTTP, w tym Axios. Obecnie poszerza wiedzę z zakresu Full Stack JavaScript development, jednocześnie utrzymując profesjonalne obowiązki IT.",
+      "Specjalista IT z analitycznym podejściem i doświadczeniem w testowaniu aplikacji webowych. Posiadam umiejętność logicznego myślenia i zdolności analityczne niezbędne w testowaniu oprogramowania. Biegły w identyfikacji problemów z użytecznością (user experience) i zapewnianiu jakości produktów cyfrowych. Doświadczony w pracy zespołowej i dotrzymywaniu terminów projektowych, ze znajomością metodologii zwinnych.",
     profilePicture: null,
     contact: {
       phone: "+48 690 136 499",
@@ -39,6 +39,8 @@ const cvData = {
       period: "09/2021 -- Obecnie",
       location: "Bielany Wrocławskie",
       responsibilities: [
+        "Współpraca z zespołami projektowymi w metodologii zwinnej",
+        "Identyfikacja, raportowanie i monitorowanie błędów w systemach",
         "Wdrażanie i utrzymanie rozwiązań infrastruktury IT z wykorzystaniem metodologii zwinnych",
         "Zarządzanie projektami technicznymi z zachowaniem ścisłych terminów",
         "Współpraca z zespołami międzynarodowymi przy użyciu języka angielskiego na poziomie B2",
@@ -46,26 +48,28 @@ const cvData = {
     },
   ],
   skills: {
-    programmingLanguages: [
-      "HTML5, CSS3, JavaScript (ES6+)",
-      "Ekosystem React",
-      "Podstawy TypeScript",
+    testingSkills: [
+      "Testy manualne aplikacji webowych",
+      "Testowanie user experience (UX/UI)",
+      "Raportowanie i śledzenie błędów",
+      "Testy cross-browser i responsywności",
     ],
-    webDevelopment: [
-      "Znajomość metod protokołu HTTP",
-      "REST API i biblioteka Axios",
-      "Podstawy Docker dla developmentu",
-      "Figma do projektowania UI/UX",
+    analytical: [
+      "Myślenie analityczne i logiczne",
+      "Dbałość o szczegóły",
+      "Umiejętność dokumentacji testów",
+      "Analiza wymagań użytkownika",
     ],
     methodologies: [
-      "Praktyki programowania zwinnego",
-      "Kontrola wersji Git",
-      "Cykl życia oprogramowania",
+      "Metodologie zwinne",
+      "Praca w systemie SCRUM",
+      "Zarządzanie jakością oprogramowania",
     ],
     technicalTools: [
-      "Narzędzia do rozwoju frontend",
-      "Zasady projektowania UI/UX",
-      "Testowanie kompatybilności cross-browser",
+      "Systemy zarządzania błędami",
+      "Narzędzia testowania webowego",
+      "Podstawy HTML/CSS dla testów",
+      "Znajomość elementów UI (checkboxy, radiobuttony, etc.)",
     ],
   },
   education: [
