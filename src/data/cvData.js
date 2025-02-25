@@ -9,9 +9,10 @@ const cvData = {
   },
   personalInfo: {
     name: "MACIEJ BRATKO",
-    title: "Frontend Developer & IT Specialist",
+    // Adjusted title to align with the Junior Full Stack Developer role
+    title: "Junior Full Stack Developer & IT Specialist",
     profile:
-      "IT specialist with strong technical background and frontend development skills. Proficient in modern web development tools and methodologies, with B2 English proficiency. Experienced in meeting project deadlines and working with HTTP-based APIs including Axios. Currently expanding Full Stack JavaScript development expertise while maintaining professional IT responsibilities.",
+      "IT Specialist with a strong technical background and a proven track record in frontend development. I have solid experience with modern web development tools and methodologies and am currently expanding my skills to full-stack JavaScript development. I am proficient in JavaScript, React and TypeScript fundamentals, and I'm gaining hands-on experience with backend technologies through my Full Stack JavaScript Developer course. I communicate effectively in English (B2) and thrive in remote, agile environments.",
     profilePicture: null,
     contact: {
       phone: "+48 690 136 499",
@@ -20,16 +21,23 @@ const cvData = {
     },
     projects: [
       {
-        name: "Kapu$ta - Full-Stack app with responsive design and UX focus",
+        // Emphasize full-stack aspects where possible
+        name: "Kapu$ta - Full-Stack App with Responsive Design and UX Focus",
         url: "https://github.com/EnChyb/FE-Kapusta-Team-Project",
+        description:
+          "A full-stack application project where I contributed to both frontend and backend development, focusing on responsive design and user experience.",
       },
       {
-        name: "Fresh Harvest Box - React-based fruit store frontend with Axios API integration",
+        name: "Fresh Harvest Box - React-based Fruit Store Frontend with Axios API Integration",
         url: "https://github.com/MaciejBratko/Fresh_Harvest_Box",
+        description:
+          "Developed a modern, responsive frontend for an online fruit store using React and Axios for API integration.",
       },
       {
-        name: "Cinemania - API-powered movie catalogue using modern HTTP methods",
+        name: "Cinemania - API-powered Movie Catalogue Using Modern HTTP Methods",
         url: "https://github.com/RafalSz1270/Cinemania-JS",
+        description:
+          "Collaborated on building an API-driven movie catalogue application, enhancing my understanding of client-server communication and RESTful principles.",
       },
     ],
   },
@@ -39,9 +47,10 @@ const cvData = {
       period: "09/2021 -- 03/2025",
       location: "Bielany Wrocławskie",
       responsibilities: [
-        "Implementing and maintaining IT infrastructure solutions using agile methodologies",
-        "Managing technical projects with strict deadline adherence",
-        "Collaborating with international teams using C2-level English",
+        "Implemented and maintained IT infrastructure solutions using agile methodologies",
+        "Managed technical projects with strict deadline adherence",
+        "Collaborated with international teams using B2-level English",
+        "Gained experience in understanding user requirements and problem-solving, which supports my transition to full-stack development",
       ],
     },
   ],
@@ -52,9 +61,9 @@ const cvData = {
       "TypeScript",
     ],
     webDevelopment: [
-      "HTTP protocol methods expertise",
-      "REST APIs and Axios library",
-      "Docker basics for development",
+      "Modern frontend development with React basics",
+      "HTTP protocol methods and REST APIs using Axios",
+      "Basic Node.js and Express concepts from full-stack training",
       "Figma for UI/UX design",
     ],
     methodologies: [
@@ -63,9 +72,10 @@ const cvData = {
       "Software development lifecycle",
     ],
     technicalTools: [
-      "Frontend development tools",
+      "Frontend development tools and libraries",
       "UI/UX design principles",
       "Cross-browser compatibility testing",
+      "Familiarity with Docker for development",
     ],
   },
   education: [
@@ -74,7 +84,9 @@ const cvData = {
       period: "01/2024 -- 12/2024",
       details: [
         "Modern frontend development with React",
+        "Backend development basics with Node.js and Express",
         "HTTP/REST API integration using Axios",
+        "Introduction to Next.js and full-stack architecture",
         "UI/UX design principles and implementation",
         "Docker containerization basics",
       ],
